@@ -1,0 +1,39 @@
+import random
+
+countery=0
+counterx=0
+dicey=0
+dicex=0
+i=0
+
+
+def randomdice():
+    return random.randint(1, 6)
+
+
+while i < 5:
+    dicex=randomdice()
+    dicey=randomdice()
+    if dicex>dicey:
+        counterx+=1
+
+    if dicey>dicex:
+        countery+=1
+
+    while dicex==dicey:
+        dicex = randomdice()
+        dicey = randomdice()
+
+        if dicex > dicey:
+            counterx += 1
+
+        if dicey > dicex:
+            countery += 1
+
+    i += 1
+
+if counterx > countery:
+    print("player first win he get: ",counterx)
+
+if countery > counterx:
+    print("player second win he get: ", countery)
