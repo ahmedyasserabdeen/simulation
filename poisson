@@ -1,0 +1,19 @@
+import math
+alpha = int(input("Enter alpha: "))
+pdf = []
+cdf = []
+cumulative = 0
+if alpha > 0:
+    for i in range(0, 1000):
+        poisson = (pow(math.e, -alpha) * pow(alpha, i))/math.factorial(i)
+        pdf.append(poisson)
+        cumulative = cumulative + poisson
+        cdf.append(cumulative)
+        if cumulative >= 1.00:
+            break
+    print("X       PDF      CDF")
+    for i in range(0, len(cdf)):
+        if cdf[i] <= 1.00:
+            print("%d    %4f %4f" % (i, pdf[i], cdf[i]))
+else:
+    print("Alpha must be positive number")
