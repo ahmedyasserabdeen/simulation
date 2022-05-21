@@ -1,0 +1,35 @@
+
+import random
+probdie = [0,0,0,0,0,0]
+i=0
+x=0
+t=0
+element =1
+sum=0
+for i in range(len(probdie)):
+        print("enter the prob of:", element)
+        probdie[i] = float(input())
+        sum=sum+probdie[i]
+        element+=1
+if sum==1.00:
+    randomnum=random.randint(1,101)
+    if 1<=randomnum<=(probdie[0]*100):
+        print("1")
+    elif (probdie[0]*100)<randomnum<=((probdie[0]*100)+(probdie[1]*100)):
+        print("2")
+    elif ((probdie[0]+probdie[1]) * 100) < randomnum <= (((probdie[0]+probdie[1]+probdie[2]) * 100)):
+        print("3")
+    elif ((probdie[0] + probdie[1]+probdie[2]) * 100) < randomnum <= (((probdie[0] + probdie[1] + probdie[2]+probdie[3]) * 100)):
+        print("4")
+    elif ((probdie[0] + probdie[1]+probdie[2]+probdie[3]) * 100) < randomnum <= (((probdie[0] + probdie[1] + probdie[2]+probdie[3]+probdie[4]) * 100)):
+        print("5")
+    elif ((probdie[0] + probdie[1]+probdie[2]+probdie[3]+probdie[4]) * 100) < randomnum <= (((probdie[0] + probdie[1] + probdie[2]+probdie[3]+probdie[4]+probdie[5]) * 100)):
+        print("6")
+
+else:
+    print("The sum of the probabilities is not = 1 ")
+
+
+
+
+
